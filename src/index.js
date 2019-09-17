@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { App } from './App';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
+
 import Context from './Context';
+import { App } from './App';
 
 const client = new ApolloClient({
   uri: 'https://petgram-api-sumanoop.now.sh/graphql'
