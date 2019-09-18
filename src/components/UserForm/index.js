@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 
 import { useInputValue } from '../../hooks/useInputValue';
-import { Form, Button, Input, Title } from './styles';
+import { Error, Form, Button, Input, Title } from './styles';
 
-export const UserForm = ({ onSubmit, title }) => {
+export const UserForm = ({ error, disabled, onSubmit, title }) => {
   const email = useInputValue('');
   const password = useInputValue('');
 
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit({
       email: email.value,
@@ -17,12 +17,13 @@ export const UserForm = ({ onSubmit, title }) => {
 
   return (
     <Fragment>
-      <Title>{title}</Title>
-      <Form onSubmit={handleSubmit}>
-        <Input placeholder='Email' {...email} />
-        <Input placeholder='Password' type='password' {...password} />
-        <Button>{title}</Button>
+      <Form disabled={disabled} onSubmit={handleSubmit}>
+        <Title>{title}</Title>
+        <Input disabled={disabled} placeholder='Email' {...email} />
+        <Input disabled={disabled} placeholder='Password' type='password' {...password} />
+        <Button disabled={disabled} >{title}</Button>
       </Form>
+      {error && <Error>{error}</Error>}
     </Fragment>
   );
 };
