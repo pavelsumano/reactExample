@@ -54,6 +54,8 @@ PhotoCard.propTypes = {
   liked: PropTypes.bool.isRequired,
   src: PropTypes.string.isRequired,
   likes: function(props, propName, componentName) {
+    const propValue = props[propName];
+
     if (propValue === undefined) {
       return new Erro(`${propName} value must be defided`);
     }
