@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
         html {
@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         
         ul, li, h1, h2, h3, p, button {
                 margin: 0;
+                padding: 0;
         }
 
         ul {
@@ -38,4 +39,4 @@ export const GlobalStyle = createGlobalStyle`
                 overflow-x: hidden;
                 min-height: 100vh;
                 padding-bottom: 10px;
-        }`
+        }`;
